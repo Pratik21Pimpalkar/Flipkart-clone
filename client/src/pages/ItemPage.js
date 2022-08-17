@@ -5,20 +5,22 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FlashOnIcon from "@mui/icons-material/FlashOn";
 import DiscountIcon from "@mui/icons-material/Discount";
 import { useParams } from "react-router-dom";
+import { getProductDetails } from "../redux/actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
 
 const ItemPage = () => {
 
   const dispatch = useDispatch();
-  const {product}=useSelector(state=>state.allproducts)
+  const { product } = useSelector(state => state.productDetails)
   console.log(product);
   const { id } = useParams();
   useEffect(() => {
-    dispatch({type:"SELECT_PRODUCT", id})
+    dispatch(getProductDetails(id))
   }, [id]);
 
-  return (
-    <ProductWrapper>
+  return (<>
+    {product ? <ProductWrapper>
+
       <ImgDiv>
         <div className="productBox">
           <img src={product.img} alt={product.title} />
@@ -41,7 +43,7 @@ const ItemPage = () => {
       <Details>
         <div className="head">
           <h3>
-           {product.title}
+            {product.title}
           </h3>
         </div>
         <div className="ratingdiv">
@@ -90,7 +92,8 @@ const ItemPage = () => {
           </ul>
         </div>
       </Details>
-    </ProductWrapper>
+    </ProductWrapper> : <div />}
+  </>
   );
 };
 

@@ -14,7 +14,6 @@ import NavbarUsername from "./NavbarUsername";
 
 const Navbar = () => {
   const [account, setAccount] = useContext(UserContext);
-  console.log(account);
   const StyledBadge = stl(Badge)({
     "& .MuiBadge-badge": {
       color: "white",

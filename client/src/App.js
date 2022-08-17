@@ -15,7 +15,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/products/:id" element={<ItemPage />} />
+          <Route path="/product/:id" element={<ItemPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route>404 Page not found</Route>
         </Routes>

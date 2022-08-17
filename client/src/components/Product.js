@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-// import { Laptop } from "../data/laptop";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import StarRateIcon from "@mui/icons-material/StarRate";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -26,21 +25,22 @@ const responsive = {
   },
 };
 
-const Product = ({ Heading }) => {
- const Laptop=useSelector(state=>state.allproducts)
-//  console.log(Laptop);
+const Product = ({ Heading, product}) => {
+
   return (
     <>
       <DealBar>
-        <h1>{Heading}</h1>
+        <h1 style={{textTransform:"capitalize"}}>{Heading}</h1>
         <div id="viewall">
           <button>VIEW ALL</button>
         </div>
       </DealBar>
       <ProductBar>
         <Carousel responsive={responsive} infinite={true} centerMode={false}>
-          {Laptop.products.map((item, id) => (
-            <Link key={id} to={`/products/${item.id}`} style={{ textDecoration: "none", color: "black" }}   >
+          
+          { product ?
+          product.map((item, id) => (
+            <Link key={id} to={`/product/${item.id}`} style={{ textDecoration: "none", color: "black" }}   >
             <div className="item_carousel">
               <div className=" item_Pic">
               <img src={item.img}  alt="" />
@@ -61,7 +61,7 @@ const Product = ({ Heading }) => {
               </div>
             </div>
              </Link>
-          ))}
+          )):<div/>}
         </Carousel>
       </ProductBar>
     </>
