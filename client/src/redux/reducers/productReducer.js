@@ -16,7 +16,7 @@ export const productReducer = (state = {}, action) => {
   }
 };
 
-export const getProductDetailsReducer = (state = {product:{}}, action) => {
+export const getProductDetailsReducer = (state = { product: {} }, action) => {
   switch (action.type) {
     case "REQUEST_PRODUCT":
       return {
@@ -40,3 +40,4 @@ export const getProductDetailsReducer = (state = {product:{}}, action) => {
       return state
   }
 }
+

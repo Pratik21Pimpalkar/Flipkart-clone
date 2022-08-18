@@ -5,8 +5,8 @@ export const Laptop = [
     price: "67,999",
     category: "laptops",
     img: "https://i.postimg.cc/NF97xm2B/hp-copy.jpg",
-    mrp: "78999",
-    rating: "4.2", review: "1899"
+    mrp: "78,999",
+    rating: "4.2", review: "1,899"
   },
   {
     id: 2,
@@ -14,7 +14,7 @@ export const Laptop = [
     price: "52,990",
     category: "laptops",
     img: "https://i.postimg.cc/mgbjvc0N/acer.jpg",
-    mrp: "65999", rating: "4.0", review: "222"
+    mrp: "65,999", rating: "4.0", review: "222"
   },
   {
     id: 3,
@@ -22,7 +22,7 @@ export const Laptop = [
     price: "59,990",
     category: "laptops",
     img: "https://i.postimg.cc/3xn1Y8hM/acernitro.jpg",
-    mrp: 80999, rating: "4.2", review: "3522"
+    mrp: "80,999", rating: "4.2", review: "3,522"
   },
   {
     id: 4,
@@ -30,7 +30,7 @@ export const Laptop = [
     price: "54,990",
     category: "laptops",
     img: "https://i.postimg.cc/VNvRNxsJ/asustuf.jpg",
-    mrp: "61999",
+    mrp: "61,999",
     rating: "4.5", review: "45"
   },
   {
@@ -39,7 +39,7 @@ export const Laptop = [
     price: "55,990",
     category: "laptops",
     img: "https://i.postimg.cc/hGY0Q2hp/asusVivo.jpg",
-    mrp: "78999",
+    mrp: "78,999",
     rating: "4.3", review: "752"
   },
   {
@@ -48,8 +48,8 @@ export const Laptop = [
     price: "61,900",
     category: "laptops",
     img: "https://i.postimg.cc/ZKPjsPD5/Hpcore.jpg",
-    mrp: "75099",
-    rating: "4.1", review: "2500"
+    mrp: "75,099",
+    rating: "4.1", review: "2,500"
   },
   {
     id: 7,
@@ -57,7 +57,7 @@ export const Laptop = [
     price: "57,990",
     category: "laptops",
     img: "https://i.postimg.cc/ZKPjsPD5/Hpcore.jpg",
-    mrp: "82099",
+    mrp: "82,099",
     rating: "4.3", review: "909"
   },
   {
@@ -126,5 +126,59 @@ export const Laptop = [
     img: "https://i.postimg.cc/X7Wb96x9/motog60.jpg",
     rating: "4.0", review: "8,954"
 
-  }
+  },
+  {
+    id: 110,
+    title: "BOMBAY SHAVING COMPANY Activated Charcoal Complete Home Facial Kit | Removes Blackheads, De-tans, Unclogs Pores & Deep Cleanses | Made in India  (4 Items in the set)",
+    price: "499",
+    mrp: "₹706",
+    category: 'beauty',
+    img: "https://rukminim1.flixcart.com/image/1200/1200/kdoup3k0/combo-kit/v/k/p/charcoal-facial-starter-kit-tan-and-blackhead-removal-kit-skin-original-imafujjcycmyrsrc.jpeg?q=70",
+    rating: "4.2", review: "38,960"
+  },
+  {
+    id: 115,
+    title: "HEAD & SHOULDERS Anti-Dundruff Smooth & Silky Shampoo  (650 ml)",
+    price: "396",
+    mrp: "660",
+    category: 'beauty',
+    img: "https://rukminim1.flixcart.com/image/800/800/l4x2rgw0/shampoo/v/m/v/-original-imagfph9zuhur5c2.jpeg?q=70",
+    rating: "4.2", review: "1,08,954"
+  },
+  {
+    id: 113,
+    title: "Clean & Clear Facewash Face Wash  (480 ml)",
+    price: "432",
+    mrp: "540",
+    category: 'beauty',
+    img: "https://rukminim1.flixcart.com/image/800/800/l09w8sw0/face-wash/s/k/o/-original-imagc3y28zjhj8ed.jpeg?q=70",
+    rating: "4.2", review: "18,224"
+  },
+  {
+    id: 123,
+    title: "HIMALAYA Purifying Neem Face Pack  (50 g)",
+    price: "69",
+    mrp: "75",
+    category: 'beauty',
+    img: "https://rukminim1.flixcart.com/image/800/800/l09w8sw0/face-wash/s/k/o/-original-imagc3y28zjhj8ed.jpeg?q=70",
+    rating: "4.3", review: "88,954"
+  },
+  {
+    id: 147,
+    title: "urbangabru Beard Oil Hair Oil  (50 ml)",
+    price: "299",
+    mrp: "375",
+    category: 'beauty',
+    img: "https://rukminim1.flixcart.com/image/800/800/k5cs87k0/hair-oil/h/k/q/50-beard-oil-natural-growth-softener-conditioner-urbangabru-original-imafz25qnah5skfz.jpeg?q=70",
+    rating: "4.3", review: "88,954"
+  },
+  {
+    id: 168,
+    title: "Lakmé Absolute Explore Liquid Eye shadow 10 ml  (Pink Champagne & Copper Glitter)",
+    price: "299",
+    mrp: "375",
+    category: 'beauty',
+    img: "https://rukminim1.flixcart.com/image/800/800/l2ghgnk0/eye-shadow/9/f/c/10-absolute-explore-liquid-eye-shadow-lakme-original-imagdsrwycxaezmx.jpeg?q=70",
+    rating: "4.3", review: "88,954"
+  },
 ];

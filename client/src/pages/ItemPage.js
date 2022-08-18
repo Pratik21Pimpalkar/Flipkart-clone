@@ -6,18 +6,21 @@ import FlashOnIcon from "@mui/icons-material/FlashOn";
 import DiscountIcon from "@mui/icons-material/Discount";
 import { useParams } from "react-router-dom";
 import { getProductDetails } from "../redux/actions/productActions";
+import { addProductToCart } from "../redux/actions/cartActions";
 import { useDispatch, useSelector } from "react-redux";
 
 const ItemPage = () => {
 
   const dispatch = useDispatch();
   const { product } = useSelector(state => state.productDetails)
-  console.log(product);
   const { id } = useParams();
   useEffect(() => {
     dispatch(getProductDetails(id))
   }, [id]);
 
+  const addToCart=()=>{
+    dispatch(addProductToCart(id))
+  }
   return (<>
     {product ? <ProductWrapper>
 
@@ -26,7 +29,7 @@ const ItemPage = () => {
           <img src={product.img} alt={product.title} />
         </div>
         <div className="buy-cart">
-          <button>
+          <button onClick={addToCart}>
             <span>
               <ShoppingCartIcon />
             </span>

@@ -183,6 +183,9 @@ const LoginBox = styled.div`
   width: 45rem;
   border-radius: 0.2rem;
   display: flex;
+  @media screen and (max-width: 450px){
+    height: 38rem;
+  }
 `;
 const Bluepart = styled.div`
   background-color: #2874f0;
@@ -236,5 +239,6 @@ const Desc = styled.div`
     text-transform: uppercase !important;
     background-color: #fb641b;
   }
+  
 `;
 export default Login;

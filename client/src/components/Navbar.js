@@ -11,10 +11,12 @@ import { UserContext } from "../Context";
 import { Badge } from "@mui/material";
 import NavbarUsername from "./NavbarUsername";
 import Search from "./Search";
+import { useSelector } from "react-redux";
 
 
 const Navbar = () => {
   const [account, setAccount] = useContext(UserContext);
+  const cartLength= useSelector(state=>state.cart.cartProduct)
   const StyledBadge = stl(Badge)({
     "& .MuiBadge-badge": {
       color: "white",
@@ -28,6 +30,7 @@ const Navbar = () => {
   return (
     <>
       <Navwrapper>
+        <div className="navwrap">
         <Link to="/">
           <div id="logo">
             <img src={logo} alt="flipkart-logo" />
@@ -60,11 +63,12 @@ const Navbar = () => {
         <div id="cart">
           <NavLink style={{ textDecoration: "none" }} to={"/cart"}>
             <div>
-              <StyledBadge badgeContent={4} >
+              <StyledBadge badgeContent={cartLength.length} display={cartLength.length>0? "block" :"none"}>
                 <ShoppingCartIcon />
               </StyledBadge>
               <button>Cart</button></div>
           </NavLink>
+        </div>
         </div>
       </Navwrapper>
       <NavTabs />
@@ -75,6 +79,7 @@ const Navbar = () => {
 };
 
 const Navwrapper = styled.nav`
+.navwrap{
   position: sticky;
   margin: 0;
   padding: 0;
@@ -87,6 +92,20 @@ const Navwrapper = styled.nav`
   align-items: center;
   gap: 1rem;
   box-shadow: 0 1px 8px rgb(0 0 0 / 80%);
+}
+background-color: #2874f0;
+  /* position: sticky;
+  margin: 0;
+  padding: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #2874f0;
+  display: flex;
+  justify-content: center;
+  min-height: 3.5rem;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 1px 8px rgb(0 0 0 / 80%); */
   #logo {
     img {
       width: 4.68rem;
@@ -159,6 +178,14 @@ const Navwrapper = styled.nav`
       font-size: 1rem;
       font-weight: 600;
       color: white;
+    }
+  }
+
+  @media screen  and (max-width : 450px){
+    .navwrap{
+      box-shadow: none;
+
+      transform: scale(0.971);
     }
   }
 `;

@@ -7,13 +7,16 @@ const Home = () => {
   const dispatch = useDispatch()
   const [laptops, setLaptops]=useState([])
   const [mobile, setMobile]=useState([])
+  const [beauty, setBeauty]=useState([])
   const {products}= useSelector((state) => state.allproducts);
   if(products){
     const laptopProduct =products.filter(product=>product.category==='laptops')
     const mobileProduct =products.filter(product=>product.category==='mobiles')
+    const beautyProduct =products.filter(product=>product.category==='beauty')
     setTimeout(() => {
       setLaptops(laptopProduct)
-      setMobile(mobileProduct)
+      setMobile(mobileProduct) 
+      setBeauty(beautyProduct)
     }, 0);
   }
   useEffect(() => {
@@ -26,6 +29,7 @@ const Home = () => {
       <HeroSlider />
       <Product Heading={"laptops"} product={laptops} />
       <Product Heading={"Mobiles"} product={mobile} />
+      <Product Heading={"Beauty and Personal Care"} product={beauty} />
     </div>
   )
 }

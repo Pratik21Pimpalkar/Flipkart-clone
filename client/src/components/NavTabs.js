@@ -38,6 +38,24 @@ const TabsWrapper = styled.div`
     }
   }
   border-bottom: 0.08rem solid #EDEFF1;
+  @media screen  and (max-width : 1250px){
+    transform: scale(1);
+    .tabs-div{
+      gap:1rem;
+    }
+  }
+  @media screen  and (max-width : 750px){
+    transform: scale(0.95);
+    .tabs-div{
+      gap:1rem;
+    }
+  }
+  @media screen  and (max-width : 450px){
+    transform: scale(1);
+    .tabs-div{
+      gap:1rem;
+    }
+  }
 `;
 
 export default NavTabs;

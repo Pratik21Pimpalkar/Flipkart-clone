@@ -30,7 +30,7 @@ const Product = ({ Heading, product}) => {
   return (
     <>
       <DealBar>
-        <h1 style={{textTransform:"capitalize"}}>{Heading}</h1>
+        <h1 style={{textTransform:"capitalize",fontSize:" 1.5rem"}}>{Heading}</h1>
         <div id="viewall">
           <button>VIEW ALL</button>
         </div>
