@@ -7,7 +7,7 @@ const reqString = {
 }
 
 const productDetailsSchema = new Schema({
-    id: reqString,
+    id: {type:Number},
     title: reqString,
     img: reqString,
     price: reqString,

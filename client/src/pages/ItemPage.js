@@ -106,8 +106,9 @@ const ProductWrapper = styled.div`
 const ImgDiv = styled.div`
   display: flex;
   /* width: -webkit-fill-available; */
-  width: 61rem;
+  width: auto;
   flex-direction: column;
+  padding: 2rem;
   justify-content: center;
   align-items: center;
 
@@ -115,9 +116,11 @@ const ImgDiv = styled.div`
     margin-top: 1.4rem;
     padding: 3rem;
     border: 0.08rem solid #f1f3f6;
+    height: 25rem;
     img {
-      width: 25rem;
-    }
+      width: 100%;
+      height: 100%;
+          }
   }
   .buy-cart {
     margin-top: 2rem;

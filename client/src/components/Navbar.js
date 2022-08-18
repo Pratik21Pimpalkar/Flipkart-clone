@@ -10,6 +10,7 @@ import { styled as stl } from '@mui/material/styles';
 import { UserContext } from "../Context";
 import { Badge } from "@mui/material";
 import NavbarUsername from "./NavbarUsername";
+import Search from "./Search";
 
 
 const Navbar = () => {
@@ -22,6 +23,7 @@ const Navbar = () => {
   });
   const handleOpen = () => setOpen(true);
   const [open, setOpen] = useState(false);
+  const [search,setSearch]= useState("")
 
   return (
     <>
@@ -31,15 +33,17 @@ const Navbar = () => {
             <img src={logo} alt="flipkart-logo" />
           </div>
         </Link>
-        <div id="search">
+        {/* <div id="search">
           <input
             type="text"
             placeholder="Search for products,brands and more"
+            onChange={(e)=>{setSearch(e.target.value)}}
           />
           <div>
             <SearchIcon />
           </div>
-        </div>
+        </div> */}
+        <Search/>
         {
           account ?
             <NavbarUsername Username={account} /> :
@@ -74,6 +78,7 @@ const Navwrapper = styled.nav`
   position: sticky;
   margin: 0;
   padding: 0;
+  z-index: 1000;
   width: 100%;
   background-color: #2874f0;
   display: flex;

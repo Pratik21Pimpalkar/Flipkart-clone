@@ -14,8 +14,8 @@ export const getProducts = async (req, res) => {
 export const getProductByID = async (req, res) => {
     try {
         const id = req.params.id;
-        const data = await Product.findOne({ id: id })
         
+        const data = await Product.findOne({ "id": id })
         return res.status(200).json(data)
     } catch (error) {
         return res.status(500).json({ message: error.message })
