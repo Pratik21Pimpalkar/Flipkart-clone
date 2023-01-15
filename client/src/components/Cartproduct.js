@@ -21,8 +21,8 @@ const Cartproduct = () => {
     <Container>
     { cartItems.length>0 ?
     <div>
-      <Grid container margin={3}  marginBottom={1} style={ContainerStyle}>
-        <Grid item md={8}>
+      <Grid container margin={3}  marginBottom={1} justifyContent={"flex-start"}style={ContainerStyle}>
+        <Grid item  md={8} sm={12}>
           <Typography variant="h6" padding={3}>
             My Cart
           </Typography>
@@ -32,7 +32,7 @@ const Cartproduct = () => {
           }
 
         </Grid>
-        <Grid item md={4} style={{ padding: '2rem' }}>
+        <Grid item md={4} sm={12} style={{ padding: '2rem' }}>
           <CartProductPrice />
         </Grid>
       </Grid>

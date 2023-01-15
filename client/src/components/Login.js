@@ -133,6 +133,7 @@ const Login = ({ handleOpen, setOpen, open }) => {
                 <TextField
                   id="standard-basic"
                   label="Enter Password"
+                  type="password"
                   onChange={handleLoginInput}
                   name="password"
                   variant="standard"
@@ -141,7 +142,8 @@ const Login = ({ handleOpen, setOpen, open }) => {
                 <TextField
                   onChange={handleLoginInput}
                   id="standard-basic"
-                  label="Enter Secret Password"
+                  type="password"
+                  label="Confirm Password"
                   name="secret"
                   placeholder="Enter your favorite color"
                   variant="standard"

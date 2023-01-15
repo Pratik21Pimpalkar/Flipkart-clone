@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import { getProductDetails } from "../redux/actions/productActions";
 import { addProductToCart } from "../redux/actions/cartActions";
 import { useDispatch, useSelector } from "react-redux";
+import { Grid } from "@mui/material";
 
 const ItemPage = () => {
 
@@ -18,83 +19,89 @@ const ItemPage = () => {
     dispatch(getProductDetails(id))
   }, [id]);
 
-  const addToCart=()=>{
+  const addToCart = () => {
     dispatch(addProductToCart(id))
   }
   return (<>
     {product ? <ProductWrapper>
+      <Grid container justifyContent={"center"}>
+        <Grid item md={5}>
+          <ImgDiv>
+            <div className="productBox">
+              <img src={product.img} alt={product.title} />
+            </div>
+            <div className="buy-cart">
+              <button onClick={addToCart}>
+                <span>
+                  <ShoppingCartIcon />
+                </span>
+                Add to Cart
+              </button>
+              <button>
+                <span>
+                  <FlashOnIcon />
+                </span>
+                Buy Now
+              </button>
+            </div>
+          </ImgDiv>
+        </Grid>
+        <Grid item md={7}>
 
-      <ImgDiv>
-        <div className="productBox">
-          <img src={product.img} alt={product.title} />
-        </div>
-        <div className="buy-cart">
-          <button onClick={addToCart}>
-            <span>
-              <ShoppingCartIcon />
-            </span>
-            Add to Cart
-          </button>
-          <button>
-            <span>
-              <FlashOnIcon />
-            </span>
-            Buy Now
-          </button>
-        </div>
-      </ImgDiv>
-      <Details>
-        <div className="head">
-          <h3>
-            {product.title}
-          </h3>
-        </div>
-        <div className="ratingdiv">
-          <div className="rating">
-            <p>{product.rating}</p>
-            <StarRateIcon />
-          </div>
-          <p className="review">({product.review})</p>
-        </div>
-        <div className="pricediv">
-          <span className="price">₹{product.price}</span>
-          <span className="mrp">₹{product.mrp}</span>
-        </div>
-        <div className="coupons">
-          <h4>Coupons for you</h4>
-          <ul>
-            <li>
-              <span>
-                <DiscountIcon />
-              </span>
-              <strong>Special Price</strong> Get extra 30% off upto ₹50 on 1
-              item(s) (price inclusive of discount) <p>T&C</p>
-            </li>
-            <h4>Available offers</h4>
-            <li>
-              <span>
-                <DiscountIcon />
-              </span>
-              <strong> Bank Offer</strong> 10% off on ICICI Bank Credit Cards,
-              up to ₹1250. On orders of ₹5000 and above <p>T&C</p>
-            </li>
-            <li>
-              <span>
-                <DiscountIcon />
-              </span>
-              <strong> Bank Offer</strong> Additional Flat ₹250 off on ICICI
-              Bank Credit EMI transactions <p>T&C</p>
-            </li>
-            <li>
-              <span>
-                <DiscountIcon />
-              </span>
-              <strong>Bank Offer</strong> 5% Cashback on Flipkart Axis Bank Card{" "}
-              <p>T&C</p>
-            </li>
-          </ul>
-        </div>
-      </Details>
+          <Details>
+            <div className="head">
+              <h3>
+                {product.title}
+              </h3>
+            </div>
+            <div className="ratingdiv">
+              <div className="rating">
+                <p>{product.rating}</p>
+                <StarRateIcon />
+              </div>
+              <p className="review">({product.review})</p>
+            </div>
+            <div className="pricediv">
+              <span className="price">₹{product.price}</span>
+              <span className="mrp">₹{product.mrp}</span>
+            </div>
+            <div className="coupons">
+              <h4>Coupons for you</h4>
+              <ul>
+                <li>
+                  <span>
+                    <DiscountIcon />
+                  </span>
+                  <strong>Special Price</strong> Get extra 30% off upto ₹50 on 1
+                  item(s) (price inclusive of discount) <p>T&C</p>
+                </li>
+                <h4>Available offers</h4>
+                <li>
+                  <span>
+                    <DiscountIcon />
+                  </span>
+                  <strong> Bank Offer</strong> 10% off on ICICI Bank Credit Cards,
+                  up to ₹1250. On orders of ₹5000 and above <p>T&C</p>
+                </li>
+                <li>
+                  <span>
+                    <DiscountIcon />
+                  </span>
+                  <strong> Bank Offer</strong> Additional Flat ₹250 off on ICICI
+                  Bank Credit EMI transactions <p>T&C</p>
+                </li>
+                <li>
+                  <span>
+                    <DiscountIcon />
+                  </span>
+                  <strong>Bank Offer</strong> 5% Cashback on Flipkart Axis Bank Card{" "}
+                  <p>T&C</p>
+                </li>
+              </ul>
+            </div>
+          </Details>
+        </Grid>
+      </Grid>
     </ProductWrapper> : <div />}
   </>
   );
@@ -105,6 +112,11 @@ const ProductWrapper = styled.div`
   background-color: white;
   /* grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); */
   margin: 0 4.8rem;
+  min-height: 90vh;
+  @media screen and (max-width:700px) {
+  margin: 0 1rem;
+   
+  }
 `;
 const ImgDiv = styled.div`
   display: flex;
@@ -123,6 +135,7 @@ const ImgDiv = styled.div`
     img {
       width: 100%;
       height: 100%;
+      object-fit: contain;
           }
   }
   .buy-cart {

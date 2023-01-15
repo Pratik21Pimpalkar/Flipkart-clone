@@ -1,12 +1,11 @@
 import React from 'react'
-import SimpleImageSlider from "react-simple-image-slider";
 import { herodata } from '../data/herodata';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import { Navigation, Pagination } from "swiper";
+import { Navigation, Pagination,Autoplay } from "swiper";
 const HeroSlider = () => {
   return (
     <div style={{ margin: "0.5rem", marginBottom: "1.2rem" }}>
@@ -23,9 +22,10 @@ const HeroSlider = () => {
       }}
         autoHeight={false}
         spaceBetween={20}
+        autoplay= {{delay: 2000,}}
         navigation={true} 
         loop={true}
-        modules={[Navigation, Pagination]}
+        modules={[Navigation,Autoplay, Pagination]}
         className="mySwiper"
       >
         {

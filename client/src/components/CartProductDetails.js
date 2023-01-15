@@ -11,7 +11,7 @@ const CartProductDetails = ({ item }) => {
         dispatch(removeProductFromCart(item.id))
     }
     return (
-        <Grid container padding={5} paddingRight={0}>
+        <Grid container padding={5} >
             <Grid item md={5} justifyContent={"center"} >
                 <div style={{height:"10rem",width:"10rem"}}>
                 <img src={item.img}  alt=""  style={{width:"100%",height:"100%", objectFit:"contain"}}/>

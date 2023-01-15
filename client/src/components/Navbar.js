@@ -16,7 +16,7 @@ import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [account, setAccount] = useContext(UserContext);
-  const cartLength= useSelector(state=>state.cart.cartProduct)
+  const cartLength = useSelector(state => state.cart.cartProduct)
   const StyledBadge = stl(Badge)({
     "& .MuiBadge-badge": {
       color: "white",
@@ -25,18 +25,18 @@ const Navbar = () => {
   });
   const handleOpen = () => setOpen(true);
   const [open, setOpen] = useState(false);
-  const [search,setSearch]= useState("")
+  const [search, setSearch] = useState("")
 
   return (
     <>
       <Navwrapper>
         <div className="navwrap">
-        <Link to="/">
-          <div id="logo">
-            <img src={logo} alt="flipkart-logo" />
-          </div>
-        </Link>
-        {/* <div id="search">
+          <Link to="/">
+            <div id="logo">
+              <img src={logo} alt="flipkart-logo" />
+            </div>
+          </Link>
+          {/* <div id="search">
           <input
             type="text"
             placeholder="Search for products,brands and more"
@@ -46,29 +46,29 @@ const Navbar = () => {
             <SearchIcon />
           </div>
         </div> */}
-        <Search/>
-        {
-          account ?
-            <NavbarUsername Username={account} /> :
-            <div id="login" >
-              <button onClick={handleOpen}>Login</button>
-            </div>
-        }
-        <div id="Seller">
-          <button>Become a Seller</button>
-        </div>
-        <div id="more">
-          <button>More</button>
-        </div>
-        <div id="cart">
-          <NavLink style={{ textDecoration: "none" }} to={"/cart"}>
-            <div>
-              <StyledBadge badgeContent={cartLength.length} display={cartLength.length>0? "block" :"none"}>
-                <ShoppingCartIcon />
-              </StyledBadge>
-              <button>Cart</button></div>
-          </NavLink>
-        </div>
+          <Search />
+          {
+            account ?
+              <NavbarUsername Username={account} /> :
+              <div id="login" >
+                <button onClick={handleOpen}>Login</button>
+              </div>
+          }
+          <div id="Seller">
+            <button>Become a Seller</button>
+          </div>
+          <div id="more">
+            <button>More</button>
+          </div>
+          <div id="cart">
+            <NavLink style={{ textDecoration: "none" }} to={"/cart"}>
+              <div>
+                <StyledBadge badgeContent={cartLength.length} display={cartLength.length > 0 ? "block" : "none"}>
+                  <ShoppingCartIcon />
+                </StyledBadge>
+                <button>Cart</button></div>
+            </NavLink>
+          </div>
         </div>
       </Navwrapper>
       <NavTabs />
@@ -79,6 +79,9 @@ const Navbar = () => {
 };
 
 const Navwrapper = styled.nav`
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 .navwrap{
   position: sticky;
   margin: 0;
